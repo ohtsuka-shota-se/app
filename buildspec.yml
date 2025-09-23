@@ -16,6 +16,6 @@ phases:
 artifacts:
   files:
     - 'dist/**/*'        # ビルドされたReactアプリのファイル群
-    - 'appspec.yaml'      # CodeDeployの設定ファイル
+    - 'appspec.yml'      # CodeDeployの設定ファイル
     - 'scripts/**/*'     # デプロイ用スクリプト
 
