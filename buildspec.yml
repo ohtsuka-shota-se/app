@@ -3,19 +3,21 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 22 
+      nodejs: 22
     commands:
       - echo "依存パッケージをインストールします..."
       - npm install
-      
+
   build:
     commands:
+      - echo "スクリプトに実行権限を付与します..."
+      - chmod +x scripts/*.sh  # ★★★ この行を追加してください ★★★
       - echo "ビルドを開始します..."
       - npm run build
 
 artifacts:
   files:
-    - 'dist/**/*'        # ビルドされたReactアプリのファイル群
-    - 'appspec.yml'      # CodeDeployの設定ファイル
-    - 'scripts/**/*'     # デプロイ用スクリプト
+    - 'dist/**/*'
+    - 'appspec.yml'
+    - 'scripts/**/*'
 
